@@ -1,0 +1,93 @@
+package com.example.lab08.myapplication;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+
+public class MainActivity extends AppCompatActivity {
+    EditText etNumaber1,etNumber2;
+    TextView tvsum;
+    Button btn1,btn2,btn3,btn4;
+    int sayi1,sayi2;
+
+
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+
+        btn1=(Button) findViewById(R.id.btn1);
+        btn2=(Button) findViewById(R.id.btn2);
+        btn3=(Button) findViewById(R.id.btn3);
+        btn4=(Button) findViewById(R.id.btn4);
+
+        tvsum=(TextView) findViewById(R.id.tvsum);
+        etNumaber1=(EditText) findViewById(R.id.etNumber1);
+        etNumber2=(EditText) findViewById(R.id.etNumber2);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sayi1=Integer.parseInt(etNumaber1.getText().toString());
+                sayi2=Integer.parseInt(etNumber2.getText().toString());
+                int sonuc=sayi1+sayi2;
+                tvsum.setText(""+sonuc);
+
+
+
+
+
+
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sayi1=Integer.parseInt(etNumaber1.getText().toString());//string olan deðerleri integere çevirdik.
+                sayi2=Integer.parseInt(etNumber2.getText().toString());
+                int sonuc=sayi1-sayi2; //çýkarma iþlemi yaptýk
+                tvsum.setText(""+sonuc);//sonucu textview atadýk.
+
+
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sayi1=Integer.parseInt(etNumaber1.getText().toString());
+                sayi2=Integer.parseInt(etNumber2.getText().toString());
+                int sonuc=sayi1*sayi2;
+                tvsum.setText(""+sonuc);
+
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sayi1=Integer.parseInt(etNumaber1.getText().toString());
+                sayi2=Integer.parseInt(etNumber2.getText().toString());
+                int sonuc=sayi1/sayi2;
+                tvsum.setText(""+sonuc);
+
+            }
+        });
+
+    }
+}
